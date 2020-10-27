@@ -118,6 +118,8 @@ const combine =(resultHandler,operation, ...numbers) =>{
 //     resultHandler(sum);
 // }
 
+
+
 const showResult = (messageText, result)=>{
     alert(messageText+' '+ result)
 }
