@@ -15,6 +15,10 @@
 // console.log(name,hobbies);
 // greet();
 
+// var userName ='sumaila';
+'use strict'
+
+ userName ='sumaila';
+
 console.log(userName);
 
-var userName ='sumaila';
