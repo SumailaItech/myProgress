@@ -7,4 +7,5 @@ function startGame(){
 // console.log(typeof startGame);
 console.dir(startGame);
 
+
 startGameBtn.addEventListener('click',startGame);
