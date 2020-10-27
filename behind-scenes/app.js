@@ -16,9 +16,19 @@
 // greet();
 
 // var userName ='sumaila';
-'use strict'
+// 'use strict'
 
- userName ='sumaila';
+//  userName ='sumaila';
 
-console.log(userName);
+// console.log(userName);
 
+function getName(){
+    return prompt('Your Name');
+}
+
+function greet(){
+    const userName = getName();
+    console.log("Hello " + userName);
+}
+
+greet();
