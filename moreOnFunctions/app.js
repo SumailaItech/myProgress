@@ -96,9 +96,12 @@ const getWinner = (cChoice, pChoice = DEFAULT_USER_CHOICE) =>
 // related to function
 
 const sumUp =(...numbers) =>{
+    const validateNumber = (number)=>{
+        return isNaN(number) ? 0:number;
+    }
     let sum =0;
     for(const num of numbers){
-        sum +=num;
+        sum +=validateNumber(num);
     }
     return sum;
 }
@@ -110,6 +113,6 @@ const subtractUp = function(...numbers){
     }
     return sum;
 }
-console.log(sumUp(1,5,10,-3,10));
-console.log(sumUp(1,5,10,-3,10,25,88));
+console.log(sumUp(1,5,10,'ab',10));
+console.log(sumUp(1,5,'ab',-3,10,25,88));
 console.log(subtractUp(1,10,15,20));
