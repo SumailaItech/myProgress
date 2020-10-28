@@ -57,3 +57,17 @@ console.log(testResult.lastIndexOf(1.5));
 const personalData = [{name:'Max'}, {name:'Sumaila'}];
 
 console.log(personalData.indexOf({name:'Sumaila'}));
+
+const sumaila = personalData.find((person, idx, persons)=>{
+    return person.name ==='Sumaila';
+});
+
+sumaila.name ='Anna';
+
+console.log(sumaila, personalData);
+
+const maxIndex = personalData.findIndex((person, idx, persons)=>{
+    return person.name ==='Max';
+});
+
+console.log(maxIndex);
