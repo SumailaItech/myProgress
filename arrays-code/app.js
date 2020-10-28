@@ -1,28 +1,39 @@
-const numbers = [1, 2, 3];
+// const numbers = [1, 2, 3];
 
-console.log(numbers);
+// console.log(numbers);
 
-// const moreNumbers = new Array(5);
+// // const moreNumbers = new Array(5);
+// // console.log(moreNumbers);
+
+// // const yetMoreNumbers = Array.of(1 ,2);
+// // console.log(yetMoreNumbers);
+
+// const moreNumbers =Array.from('Hi');
 // console.log(moreNumbers);
+// const listItem = document.querySelectorAll('li');
 
-// const yetMoreNumbers = Array.of(1 ,2);
-// console.log(yetMoreNumbers);
+// console.log(listItem);
 
-const moreNumbers =Array.from('Hi');
-console.log(moreNumbers);
-const listItem = document.querySelectorAll('li');
+// const arrayListitems = Array.from(listItem);
+// console.log(arrayListitems);
 
-console.log(listItem);
+// const hobbies =['cooking','sports'];
+// const personalData = [30,'max',{moreData:'info'}];
 
-const arrayListitems = Array.from(listItem);
-console.log(arrayListitems);
+// const analyticsData = [[1, 1.6],[2, 4],[5, 7]];
+// for(const analData of analyticsData){
+//     for(const data of analData){
+//         console.log(data);
+//     }
+// }
 
-const hobbies =['cooking','sports'];
-const personalData = [30,'max',{moreData:'info'}];
+const hobbies =['sports','reading'];
 
-const analyticsData = [[1, 1.6],[2, 4],[5, 7]];
-for(const analData of analyticsData){
-    for(const data of analData){
-        console.log(data);
-    }
-}
+hobbies.push('cooking');
+hobbies.unshift('coding');
+const popV = hobbies.pop();
+hobbies.shift();
+console.log(hobbies);
+
+hobbies[1]= 'CODING';
+console.log(hobbies);
