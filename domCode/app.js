@@ -49,3 +49,6 @@ const  newLi2 =newLi.cloneNode(true);
 ul.appendChild(newLi,newLi2);
 
 ul.lastElementChild.before(newLi);
+
+//ul.remove();
+ul.parentElement.removeChild(ul);
