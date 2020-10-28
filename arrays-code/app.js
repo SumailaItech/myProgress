@@ -103,8 +103,41 @@ const sortedPrices = prices.sort((a ,b) =>{
 //console.log(prices, taxAdjustedPrices);
 console.log(sortedPrices.reverse());
 
-const filtedArray = prices.filter((price, index, prices)=>{
-    return price > 6;
-});
+const filtedArray = prices.filter(p=> p > 6 );
 
 console.log(filtedArray);
+
+// let sum = 0;
+// prices.forEach(price=>{
+//     sum +=price;
+// });
+
+// console.log(sum);
+
+const sum = prices.reduce((preValue, curValue)=>preValue + curValue, 0);
+
+console.log(sum)
+
+const data = "new york;10.90;200";
+const transformedData = data.split(';')
+
+console.log(transformedData);
+const nameFragments = ['Iddrisu', 'Sumaila','Max','Askanda'];
+const name = nameFragments.join(' ');
+console.log(name);
+
+const copiedNameFragments = [...nameFragments];
+console.log(copiedNameFragments);
+
+console.log(Math.min(...prices));
+
+const persons =[{name:'Sumaila',age:30},{name:'Askanda',age:45},{name:'Shamsia',age:25}];
+const copiedPersons =persons.map(person =>({
+    name:person.name,
+    age:person.age
+}));
+
+persons.push({name:'Anna',age:29});
+persons[0].age = 31;
+console.log(persons, copiedPersons);
+
