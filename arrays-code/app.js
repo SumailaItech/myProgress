@@ -73,7 +73,7 @@
 
 // console.log(maxIndex);
 
-const prices =[10.99, 5.23, 3.5,4.5];
+const prices =[10.99, 5.23, 3.5,4.5,7.99];
 const tax = 0.19;
 //const taxAdjustedPrices = [];
 
@@ -102,3 +102,9 @@ const sortedPrices = prices.sort((a ,b) =>{
 });
 //console.log(prices, taxAdjustedPrices);
 console.log(sortedPrices.reverse());
+
+const filtedArray = prices.filter((price, index, prices)=>{
+    return price > 6;
+});
+
+console.log(filtedArray);
