@@ -114,30 +114,36 @@ console.log(filtedArray);
 
 // console.log(sum);
 
-const sum = prices.reduce((preValue, curValue)=>preValue + curValue, 0);
+// const sum = prices.reduce((preValue, curValue)=>preValue + curValue, 0);
 
-console.log(sum)
+// console.log(sum)
 
-const data = "new york;10.90;200";
-const transformedData = data.split(';')
+// const data = "new york;10.90;200";
+// const transformedData = data.split(';')
 
-console.log(transformedData);
-const nameFragments = ['Iddrisu', 'Sumaila','Max','Askanda'];
-const name = nameFragments.join(' ');
-console.log(name);
+// console.log(transformedData);
+// const nameFragments = ['Iddrisu', 'Sumaila','Max','Askanda'];
+// const name = nameFragments.join(' ');
+// console.log(name);
 
-const copiedNameFragments = [...nameFragments];
-console.log(copiedNameFragments);
+// const copiedNameFragments = [...nameFragments];
+// console.log(copiedNameFragments);
 
-console.log(Math.min(...prices));
+// console.log(Math.min(...prices));
 
-const persons =[{name:'Sumaila',age:30},{name:'Askanda',age:45},{name:'Shamsia',age:25}];
-const copiedPersons =persons.map(person =>({
-    name:person.name,
-    age:person.age
-}));
+// const persons =[{name:'Sumaila',age:30},{name:'Askanda',age:45},{name:'Shamsia',age:25}];
+// const copiedPersons =persons.map(person =>({
+//     name:person.name,
+//     age:person.age
+// }));
 
-persons.push({name:'Anna',age:29});
-persons[0].age = 31;
-console.log(persons, copiedPersons);
+// persons.push({name:'Anna',age:29});
+// persons[0].age = 31;
+// console.log(persons, copiedPersons);
 
+const nameData = ['Iddrisu','Sumaila','Mr',30];
+// const firtName = nameData[0];
+// const lastName = nameData[1];
+
+const[ firtName, lastName, ...otherInfo] = nameData;
+console.log(firtName, lastName, otherInfo);
