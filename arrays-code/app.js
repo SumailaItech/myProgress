@@ -37,3 +37,8 @@ console.log(hobbies);
 
 hobbies[1]= 'CODING';
 console.log(hobbies);
+
+hobbies.splice(1,0, 'Good Food');
+console.log(hobbies);
+hobbies.splice(0,1);
+console.log(hobbies);
