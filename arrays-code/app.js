@@ -118,8 +118,8 @@ console.log(filtedArray);
 
 // console.log(sum)
 
-// const data = "new york;10.90;200";
-// const transformedData = data.split(';')
+ const data = "new york;10.90;200";
+ const transformedData = data.split(';')
 
 // console.log(transformedData);
 // const nameFragments = ['Iddrisu', 'Sumaila','Max','Askanda'];
