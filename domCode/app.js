@@ -34,3 +34,14 @@ button.addEventListener('click',()=>{
     section.classList.toggle('invisible');
 })
 
+ul.innerHTML = ul.innerHTML + '<li>Item 4</li>'
+
+const div = document.querySelector('div');
+div.innerHTML = div.innerHTML + '<p> Something is wrong</p>';
+
+div.insertAdjacentHTML('beforeend', '<p>Something went wrong</p>');
+
+const newLi = document.createElement('li');
+newLi.textContent = 'Item 5';
+ul.appendChild(newLi);
+
