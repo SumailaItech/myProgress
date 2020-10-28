@@ -44,8 +44,9 @@
 // console.log(hobbies);
 
 const testResult =[1, 5.3, 1.5, 10, 99, -5, 10];
-const storeResult =testResult.slice(0,3);
+//const storeResult =testResult.slice(0,3);
 
+const storeResult = testResult.concat([20, 40]);
 testResult.push(5.9);
 
 console.log(storeResult, testResult);
