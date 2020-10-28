@@ -75,15 +75,19 @@
 
 const prices =[10.99, 5.23, 3.5,4.5];
 const tax = 0.19;
-const taxAdjustedPrices = [];
+//const taxAdjustedPrices = [];
 
 // for(const price of prices){
 //     taxAdjustedPrices.push(price * (1 + tax));
 // }
 
-prices.forEach((price, idx, prices) => {
-    const priceOb = {index:idx, taxAdj: price * (1 + tax)}
-    taxAdjustedPrices.push(priceOb);
-});
+// prices.forEach((price, idx, prices) => {
+//     const priceOb = {index:idx, taxAdj: price * (1 + tax)}
+//     taxAdjustedPrices.push(priceOb);
+// });
 
-console.log(taxAdjustedPrices);
+const taxAdjustedPrices = prices.map((price, idx, prices) => {
+    const priceOb = {index:idx, taxAdj: price * (1 + tax)};
+    return priceOb;
+});
+console.log(prices, taxAdjustedPrices);
