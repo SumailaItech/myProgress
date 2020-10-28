@@ -43,11 +43,17 @@
 // hobbies.splice(0,1);
 // console.log(hobbies);
 
-const testResult =[1, 5.3, 1.5, 10, 99, -5, 10];
+const testResult =[1, 5.3, 1.5, 10, 99,1.5, -5, 10];
 //const storeResult =testResult.slice(0,3);
 
 const storeResult = testResult.concat([20, 40]);
 testResult.push(5.9);
 
-console.log(storeResult, testResult);
-console.log(testResult.slice());
+//console.log(storeResult, testResult);
+//console.log(testResult.slice());
+console.log(testResult.indexOf(1.5));
+console.log(testResult.lastIndexOf(1.5));
+
+const personalData = [{name:'Max'}, {name:'Sumaila'}];
+
+console.log(personalData.indexOf({name:'Sumaila'}));
