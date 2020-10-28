@@ -45,3 +45,4 @@ const newLi = document.createElement('li');
 newLi.textContent = 'Item 5';
 ul.appendChild(newLi);
 
+ul.lastElementChild.before(newLi);
