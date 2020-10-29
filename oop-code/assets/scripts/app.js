@@ -25,15 +25,18 @@ const productList ={
             prodEl.innerHTML =`
             <div>
                 <img src="${prod.imageUrl}" alt="${prod.title}">
-                <div class="product-item_content">
-                    <h2>${this.title}</h2>
-                    <h3>${this.price}</h3>
-                    <p>${this.description}</p>
+                <div class="product-item__content">
+                    <h2>${prod.title}</h2>
+                    <h3>\$${prod.price}</h3>
+                    <p>${prod.description}</p>
+                    <button>Add to cart</button>
                 </div>
             </div>
             `
             prodList.appendChild(prodEl);
         }
-        renderHook.appendChild();
+        renderHook.appendChild(prodList);
     }
 }
+
+productList.render();
