@@ -36,6 +36,9 @@ const renderMovies =(filter='')=>{
 
     filterMovies.forEach((movie)=>{
         const movieEl =document.createElement('li');
+        // if('info' in movie){
+
+        // }
         const{ info, ...otherProps } = movie;
         const { title:movieTitle } = info;
         let text = info.title + ' - ';
