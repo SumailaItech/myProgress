@@ -3,25 +3,44 @@ class Product{
     title;
     imageUrl;
     description;
-    price
+    price;
+
+    constructor(title,image,desc,price){
+        this.title = title;
+        this.imageUrl = image;
+        this.description = desc;
+        this.price = price;
+    }
 }
 
 console.log(new Product());
 
 const productList ={
-    products:[//new Product(),
-        {
-            title:'A nice pillow',
-            imageUrl:'file:///C:/Users/Huseina/Desktop/amalitech%20projects/myProgress/oop-code/assets/images/pillow.jpg',
-            price:5.9,
-            description:'A very soft pillow for good sleeping'
-        },
-        {
-            title:'A beutiful Carpet',
-            imageUrl:'file:///C:/Users/Huseina/Desktop/amalitech%20projects/myProgress/oop-code/assets/images/carpet.jpg',
-            price:89.9,
-            description:'A beautiful carpet you may like'
-        }
+    products:[
+        new Product(
+            'A nice pillow',
+            'file:///C:/Users/Huseina/Desktop/amalitech%20projects/myProgress/oop-code/assets/images/pillow.jpg',
+            'A very soft pillow for good sleeping',
+            19.9
+        ),
+        new Product(
+            'A beutiful Carpet',
+            'file:///C:/Users/Huseina/Desktop/amalitech%20projects/myProgress/oop-code/assets/images/carpet.jpg',
+            'A beautiful carpet you may like',
+            89.9,
+        )
+        // {
+        //     title:'A nice pillow',
+        //     imageUrl:'file:///C:/Users/Huseina/Desktop/amalitech%20projects/myProgress/oop-code/assets/images/pillow.jpg',
+        //     price:5.9,
+        //     description:'A very soft pillow for good sleeping'
+        // },
+        // {
+        //     title:'A beutiful Carpet',
+        //     imageUrl:'file:///C:/Users/Huseina/Desktop/amalitech%20projects/myProgress/oop-code/assets/images/carpet.jpg',
+        //     price:89.9,
+        //     description:'A beautiful carpet you may like'
+        // }
     ],
 
     render(){
