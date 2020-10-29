@@ -120,15 +120,16 @@ class ProductItem extends Component{
 
 // Product List
 class ProductList extends Component{
-    products =[];
+    #products =[];
     constructor(renderHookId){
-        super(renderHookId);
+        super(renderHookId, false);
+        this.render();
         this.fetchPrdoducts();
         //this.render();
     }
 
     fetchPrdoducts(){
-        this. products = [
+        this.#products = [
             new Product(
                 'A nice pillow',
                 'file:///C:/Users/Huseina/Desktop/amalitech%20projects/myProgress/oop-code/assets/images/pillow.jpg',
@@ -147,7 +148,7 @@ class ProductList extends Component{
     }
 
     renderProducts(){
-        for(const prod of this.products){
+        for(const prod of this.#products){
             new ProductItem(prod,'prod-list');
            // productsItem.render();
           };
@@ -157,7 +158,7 @@ class ProductList extends Component{
        const prodList = this.createRootElement('ul','product-list',
        [new ElementAttribute('id','prod-list')]);
        
-       if(this.products && this.products.length > 0){
+       if(this.#products && this.#products.length > 0){
            this.renderProducts();
        }
     }
