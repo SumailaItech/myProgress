@@ -40,8 +40,9 @@ const renderMovies =(filter='')=>{
 
         // }
         const{ info, ...otherProps } = movie;
-        const { title:movieTitle } = info;
-        let text = info.title + ' - ';
+       // const { title:movieTitle } = info;
+       //const { getFommattedTitle } = movie;
+        let text = movie.getFommattedTitle() + ' - ';
       //let text = movie.info.title + ' - ';
         for(const key in info){
             if(key !=='title'){
@@ -67,7 +68,10 @@ const addMovieHandler =()=>{
             title,
             [extraName]:extraValue
         },
-        id:Math.random()
+        id:Math.random(),
+        getFommattedTitle:function(){
+            return this.info.title.toUpperCase();
+        }
     }
 
     movies.push(newMovie);
