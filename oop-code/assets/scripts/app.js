@@ -1,6 +1,15 @@
 
+class Product{
+    title;
+    imageUrl;
+    description;
+    price
+}
+
+console.log(new Product());
+
 const productList ={
-    products:[
+    products:[//new Product(),
         {
             title:'A nice pillow',
             imageUrl:'file:///C:/Users/Huseina/Desktop/amalitech%20projects/myProgress/oop-code/assets/images/pillow.jpg',
