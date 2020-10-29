@@ -16,6 +16,7 @@
 
 // person.isAdmin =true;
 // console.log(person['first name']);
+"use strict"
 const addMovieBtn =document.getElementById('add-movie-btn');
 const searchBtn =document.getElementById('search-btn');
 
@@ -41,8 +42,10 @@ const renderMovies =(filter='')=>{
         // }
         const{ info, ...otherProps } = movie;
        // const { title:movieTitle } = info;
-       //const { getFommattedTitle } = movie;
-        let text = movie.getFommattedTitle() + ' - ';
+       let { getFommattedTitle } = movie;
+        // let text = getFommattedTitle.call(movie) + ' - ';
+        let text = getFommattedTitle.apply(movie) + ' - ';
+       // getFommattedTitle =getFommattedTitle.bind(movie);
       //let text = movie.info.title + ' - ';
         for(const key in info){
             if(key !=='title'){
@@ -69,7 +72,7 @@ const addMovieHandler =()=>{
             [extraName]:extraValue
         },
         id:Math.random(),
-        getFommattedTitle:function(){
+        getFommattedTitle(){
             return this.info.title.toUpperCase();
         }
     }
