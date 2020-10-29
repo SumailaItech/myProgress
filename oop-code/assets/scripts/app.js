@@ -24,7 +24,9 @@ class ElementAttribute{
 class Component{
     constructor(renderHookId){
         this.hookId = renderHookId;
+        this.render();
     }
+    render(){}
 
     createRootElement(tag, cssClasses, attributes){
         const rootElement = document.createElement(tag);
@@ -125,33 +127,32 @@ class ProductList extends Component{
 
     constructor(renderHookId){
         super(renderHookId);
+        this.render();
     }
 
     render(){
        const prodList = this.createRootElement('ul','product-list',[new ElementAttribute('id','prod-list')]);
         for(const prod of this.products){
-          const productsItem = new ProductItem(prod,'prod-list');
-          productsItem.render();
+          new ProductItem(prod,'prod-list');
+         // productsItem.render();
         }
     }
 
 }
 
 class Shop{
-
+    constructor(){
+        this.render();
+    }
     render(){
         this.cart = new ShoppingCart('app');
-        this.cart.render();
-        const productList = new ProductList('app');
-       const prodListEl = productList.render();
-       
+        new ProductList('app');
     }
 }
 
 class App{
     static init(){
         const shop =new Shop();
-        shop.render();
         this.cart = shop.cart;
     }
 
