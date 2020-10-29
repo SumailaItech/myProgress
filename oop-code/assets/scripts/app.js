@@ -22,9 +22,11 @@ class ElementAttribute{
 }
 
 class Component{
-    constructor(renderHookId){
+    constructor(renderHookId, shouldRender = true){
         this.hookId = renderHookId;
-        this.render();
+        if(shouldRender){
+            this.render();
+        }
     }
     render(){}
 
@@ -79,11 +81,10 @@ class ShoppingCart extends Component{
 
 // product Item
 class ProductItem extends Component{
-
     constructor(product, renderHookId){
-        super(renderHookId);
+        super(renderHookId, false);
         this.product = product;
-        
+        this.render();   
     }
 
     addToCart(){
@@ -110,32 +111,46 @@ class ProductItem extends Component{
 
 // Product List
 class ProductList extends Component{
-    products = [
-        new Product(
-            'A nice pillow',
-            'file:///C:/Users/Huseina/Desktop/amalitech%20projects/myProgress/oop-code/assets/images/pillow.jpg',
-            'A very soft pillow for good sleeping',
-            19.9
-        ),
-        new Product(
-            'A beutiful Carpet',
-            'file:///C:/Users/Huseina/Desktop/amalitech%20projects/myProgress/oop-code/assets/images/carpet.jpg',
-            'A beautiful carpet you may like',
-            89.9,
-        )
-    ];
-
+    products =[];
     constructor(renderHookId){
         super(renderHookId);
-        this.render();
+        this.fetchPrdoducts();
+        //this.render();
     }
 
-    render(){
-       const prodList = this.createRootElement('ul','product-list',[new ElementAttribute('id','prod-list')]);
+    fetchPrdoducts(){
+        this. products = [
+            new Product(
+                'A nice pillow',
+                'file:///C:/Users/Huseina/Desktop/amalitech%20projects/myProgress/oop-code/assets/images/pillow.jpg',
+                'A very soft pillow for good sleeping',
+                19.9
+            ),
+            new Product(
+                'A beutiful Carpet',
+                'file:///C:/Users/Huseina/Desktop/amalitech%20projects/myProgress/oop-code/assets/images/carpet.jpg',
+                'A beautiful carpet you may like',
+                89.9,
+            )
+        ];
+
+        this.renderProducts();
+    }
+
+    renderProducts(){
         for(const prod of this.products){
-          new ProductItem(prod,'prod-list');
-         // productsItem.render();
-        }
+            new ProductItem(prod,'prod-list');
+           // productsItem.render();
+          };
+}
+
+    render(){
+       const prodList = this.createRootElement('ul','product-list',
+       [new ElementAttribute('id','prod-list')]);
+       
+       if(this.products && this.products.length > 0){
+           this.renderProducts();
+       }
     }
 
 }
