@@ -165,7 +165,10 @@ class App{
         // someScript.textContent = 'alert("Hi there")';
 
         // document.head.append(someScript);
-        document.getElementById('startAnalyticsBtn').addEventListener('click',this.startAnalytics);
+        //document.getElementById('startAnalyticsBtn').addEventListener('click',this.startAnalytics);
+        const timeId =setTimeout(this.startAnalytics, 3000);
+
+        document.getElementById('startAnalyticsBtn').addEventListener('click',clearTimeout(timeId))
     }
 
     static startAnalytics(){
