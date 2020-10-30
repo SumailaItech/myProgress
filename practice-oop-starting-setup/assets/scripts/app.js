@@ -14,27 +14,50 @@ class DOMHelper{
         destinationElement.append(element);
     }
 }
-class Tooltip{
+
+class Component{
+    constructor(hostElementId, insertBefore = false){
+        if(hostElementId){
+            this.hostElement =document.getElementById(hostElementId);
+        }else{
+            this.hostElement = document.body;
+        }
+        this.insertBefore =insertBefore;
+    }
+
+    detach(){
+        if(this.element){
+            this.element.remove();
+
+        }
+    }
+
+    attach(){ 
+        this.hostElement.insertAdjacentElement(this.insertBefore ? 'afterbegin' : 'beforeend', this.element) 
+        document.body.append(this.element);
+    }
+}
+
+class Tooltip extends Component{
     constructor(closeNotifierFunction){
-        this.closeNotifier =closeNotifierFunction;
+        super();
+        this.closeNotifier = loseNotifierFunction;
+        this.create();
     }
 
     closeTooltip =()=>{
         this.detach();
         this.closeNotifier();
     }
-    detach(){
-        this.element.remove();
-    }
 
-    show(){
+    create(){
         const tooltipElement =document.createElement('div');
         tooltipElement.className ='card';
         tooltipElement.textContent ='Dummy';
         tooltipElement.addEventListener('click', this.closeTooltip);
         this.element = tooltipElement;
-        document.body.append(tooltipElement);
     }
+  
 }
 
 class ProjectItem{
@@ -54,7 +77,7 @@ class ProjectItem{
         const tooltip = new Tooltip(()=>{
             this.hasActiveTooltip =false;
         });
-        tooltip.show();
+        tooltip.attach();
        this.hasActiveTooltip =true;
     }
 
