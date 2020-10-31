@@ -41,10 +41,17 @@ return promise;
   // setTimeout(()=>{
   //   console.log('Timer done')
   // }, 0);
-  let positionData;
- const posData = await getPosition();
- const timerData =await setTimer(2000);
- console.log(timerData, posData);
+  //let positionData;
+  let posData;
+  let timerData;
+  try{
+     posData = await getPosition();
+     timerData =await setTimer(2000);
+    
+  }catch(error){
+    console.log(error)
+  }
+  console.log(timerData, posData);
 //  .then(posData =>{
 //     positionData = posData;
 //     return setTimer(2000);
@@ -67,9 +74,23 @@ return promise;
 
 button.addEventListener('click', trackUserHandler);
 
-let result = 0;
-for(let i =0; i<1000000; i++){
-  result += i;
-}
+Promise.race([getPosition(),setTimer(1000)])
+.then(data =>{
+  console.log(data);
+});
 
-console.log(result);
+Promise.all([getPosition(),setTimer(1000)])
+.then(promiseData =>{
+  console.log(promiseData);
+});
+
+Promise.allSettled([getPosition(),setTimer(1000)])
+.then(data =>{
+  console.log(data);
+});
+// let result = 0;
+// for(let i =0; i<1000000; i++){
+//   result += i;
+// }
+
+// console.log(result);
