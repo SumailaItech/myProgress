@@ -25,3 +25,23 @@ function printHobbies(h){
 }
 
 printHobbies(hobbies);
+function createTaxCalculaton(tax){
+    function calculateTax(amount){
+        return amount * tax;
+    }
+    return calculateTax;
+}
+
+
+// const vatAmount = calculateTax(100,0.19)
+// const incomeTax = calculateTax(100,025);
+
+const vatAmount = createTaxCalculaton(0.19)
+ console.log(vatAmount(100));
+
+ function greatUser(){
+ let name = 'Anna';
+ console.log('Hi ' + name)
+}
+
+greatUser();
