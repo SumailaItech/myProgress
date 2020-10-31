@@ -46,20 +46,20 @@ function trackUserHandler() {
     positionData = posData;
     return setTimer(2000);
   })
-  .catch(err =>{
-    console.log(err);
-  })
   .then(data =>{
     console.log(data, positionData);
+  })
+  .catch(err =>{
+    console.log(err);
   });
 
 
-  setTimer(1000).then(data=>{
-   console.log(data);
-  });
+  // setTimer(1000).then(data=>{
+  //  console.log(data);
+  // });
 
 
-  console.log('Getting logging');
+  // console.log('Getting logging');
 }
 
 button.addEventListener('click', trackUserHandler);
