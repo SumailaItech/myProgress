@@ -45,3 +45,52 @@ const vatAmount = createTaxCalculaton(0.19)
 }
 
 greatUser();
+
+// function powerOf(x, n){
+//     let result = 1;
+//     for(let i=0; i<n; i++){
+//         result *=x;
+//     }
+//     return result;
+
+// }
+
+function powerOf(x ,n){
+    // if(n===1){
+    //     return x;
+    // }
+    return n===1 ? x: x  * powerOf(x, n-1);
+}
+console.log(powerOf(2, 3));
+
+const myself ={
+    name:'Sumaila',
+    friends:[
+        {
+            name:'Max',
+            friends :[
+                {
+                    name:'Chris',
+                }
+            ]
+        },
+        {
+            name:'Julia'
+        }
+    ]
+}
+function getFriendNames(person){
+    const collectionNames =[];
+
+    if(!person.friends){
+        return[];
+    }
+    for(const friend of person.friends){
+    collectionNames.push(friend.name);
+    collectionNames.push(...getFriendNames(friend));
+    
+    }
+    return collectionNames;
+}
+
+console.log(getFriendNames(myself));
