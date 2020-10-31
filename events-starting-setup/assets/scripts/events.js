@@ -20,6 +20,14 @@ const buttonHandler =(event)=>{
 // },2000)
 
 // window.addEventListener('scroll',buttonHandler);
+
+const form =document.querySelector('form');
+
+form.addEventListener('submit',event=>{
+    event.preventDefault();
+    console.log(event);
+});
+
 const div =document.querySelector('div');
 div.addEventListener('click',event=>{
     console.log(event);
@@ -27,7 +35,7 @@ div.addEventListener('click',event=>{
 },true);
 
 button.addEventListener('click',(event)=>{
-    event.stopPropagation();
+    //event.stopPropagation();
     console.log(event)
 });
 
@@ -40,8 +48,19 @@ const list =document.querySelector('ul');
 //     });
 // });
 
+// list.addEventListener('click',event=>{
+//     //console.log(event.currentTarget);
+//    // event.target.classList.toggle('highlight');
+//    event.target.closest('li').classList.toggle('highlight');
+//    //form.submit();
+//    button.click();
+// })
+
 list.addEventListener('click',event=>{
     //console.log(event.currentTarget);
    // event.target.classList.toggle('highlight');
    event.target.closest('li').classList.toggle('highlight');
+   //form.submit();
+   button.click();
+   console.log(this);
 })
