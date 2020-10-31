@@ -40,9 +40,19 @@ return fetch(url,{
         'Content-Type':'application/json'
     }
 }).then(response =>{
-    console.log(response);
-    return response.json();
-});
+    if(response.status >= 200 && response.status <300){
+        return response.json();
+    }else{
+        response.json().then(errData =>{
+            console.log(errData);
+            throw new Error('Something went wrong at server side');
+        });
+        
+    }
+}).catch(error=>{
+    console.log(error);
+    throw new Error('Something went wrong');
+})
 
 }
 
