@@ -1,3 +1,5 @@
+jest.mock('./http')
+
 const { loadTitle } = require('./utils');
 
 test('Should print the upper case title', ()=>{
